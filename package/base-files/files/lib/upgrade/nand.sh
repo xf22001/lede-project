@@ -5,7 +5,7 @@
 
 # 'kernel' partition or UBI volume on NAND contains the kernel
 CI_KERNPART="${CI_KERNPART:-kernel}"
-CI_KERNPART_EXT="${CI_KERNPART_EXT}"
+CI_KERNPART_EXT="${CI_KERNPART_EXT:-kernel_stock}"
 
 # 'ubi' partition on NAND contains UBI
 # There are also CI_KERN_UBIPART and CI_ROOT_UBIPART if kernel
