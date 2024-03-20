@@ -19,9 +19,6 @@
 #include <linux/random.h>
 #endif
 
-#define MTD_MAX_ECCPOS_ENTRIES_LARGE	640
-#define MTD_MAX_OOBFREE_ENTRIES_LARGE	32
-
 #define LARGE_MTD_BOOT_PART_SIZE       (CFG_BLOCKSIZE<<2)
 #define LARGE_MTD_CONFIG_PART_SIZE     (CFG_BLOCKSIZE<<2)
 #define LARGE_MTD_FACTORY_PART_SIZE    (CFG_BLOCKSIZE<<1)
@@ -29,6 +26,11 @@
 #define BLOCK_ALIGNED(a) ((a) & (CFG_BLOCKSIZE - 1))
 
 #define READ_STATUS_RETRY	1000
+
+#ifndef MTD_MAX_OOBFREE_ENTRIES_LARGE
+#define MTD_MAX_OOBFREE_ENTRIES_LARGE	32
+#define MTD_MAX_ECCPOS_ENTRIES_LARGE	640
+#endif
 
 struct nand_ecclayout {
 	__u32 eccbytes;
