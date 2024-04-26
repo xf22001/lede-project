@@ -1,6 +1,7 @@
 name: Compile and Upload Artifacts
 
-on: [push]  # 触发工作流运行的事件，这里是 push 事件
+on:
+  workflow_dispatch:
 
 jobs:
   build-and-upload:
