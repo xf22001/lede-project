@@ -12,17 +12,6 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2  # 检出你的代码到运行器
 
-      # 配置缓存步骤
-      - name: Cache dependencies
-        uses: actions/cache@v2
-        with:
-          path: |
-            ./build_dir
-            ./staging_dir/
-          key: ${{ runner.os }}-build-${{ hashFiles('**/staging_dir/toolchain-mipsel_24kc_gcc-13.2.0_musl/info.mk') }}
-          restore-keys: |
-            ${{ runner.os }}-build-
-
       - name: Set up Permissions for compile.sh
         run: chmod +x ./compile.sh  # 确保脚本具有执行权限
 
