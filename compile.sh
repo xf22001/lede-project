@@ -21,6 +21,7 @@ function main() {
 	make -j$(nproc)
 	mkdir -p uploads/default
 	rm -rf uploads/default/mt7620
+	cp -a .config uploads/default/
 	cp -a ./bin/targets/ramips/mt7620 uploads/default/
 
 	cp -a testing-kernel.config .config
@@ -30,7 +31,10 @@ function main() {
 	make -j$(nproc)
 	mkdir -p uploads/testing-kernel
 	rm -rf uploads/testing-kernel/mt7620
+	cp -a .config uploads/testing-kernel/
 	cp -a ./bin/targets/ramips/mt7620 uploads/testing-kernel/
+
+	cp -a dl uploads/
 }
 
 main $@
