@@ -1,4 +1,4 @@
-name: Compile and Upload Artifacts
+name: miwifi-r3 compile
 
 on:
   workflow_dispatch:
