@@ -10,7 +10,7 @@ jobs:
 
     steps:
       - name: Checkout Repository
-        uses: actions/checkout@v2  # 检出你的代码到运行器
+        uses: actions/checkout@v4  # 检出你的代码到运行器
 
       - name: Set up Permissions for compile.sh
         run: chmod +x ./compile.sh  # 确保脚本具有执行权限
