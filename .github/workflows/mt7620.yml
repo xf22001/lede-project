@@ -19,7 +19,7 @@ jobs:
         run: ./compile.sh  # 执行脚本
 
       - name: Upload Artifacts
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: firmware-binaries  # 构件的名称
           path: ./uploads/*  # 指定要上传的文件或目录的路径
