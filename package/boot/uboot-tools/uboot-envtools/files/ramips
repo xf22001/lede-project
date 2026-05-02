@@ -48,7 +48,6 @@ asus,rt-ax53u|\
 asus,rt-ax54|\
 asus,4g-ax56|\
 belkin,rt1800|\
-edup,ep-rt2983|\
 elecom,wrc-x1800gs|\
 h3c,tx1800-plus|\
 h3c,tx1801-plus|\
@@ -145,6 +144,15 @@ xiaomi,mi-router-4a-gigabit|\
 xiaomi,miwifi-3c)
 	ubootenv_add_uci_config "/dev/mtd1" "0x0" "0x1000" "0x10000"
 	ubootenv_add_uci_sys_config "/dev/mtd2" "0x0" "0x4000" "0x10000"
+	;;
+xiaomi,mi-router-3g|\
+xiaomi,mi-router-3-pro|\
+xiaomi,mi-router-4|\
+xiaomi,mi-router-ac2100|\
+xiaomi,miwifi-r3|\
+xiaomi,redmi-router-ac2100)
+	ubootenv_add_uci_config "/dev/mtd1" "0x0" "0x1000" "0x20000"
+	ubootenv_add_uci_sys_config "/dev/mtd2" "0x0" "0x4000" "0x20000"
 	;;
 xiaomi,miwifi-mini)
 	ubootenv_add_uci_config "/dev/mtd1" "0x0" "0x1000" "0x10000"
