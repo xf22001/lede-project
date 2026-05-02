@@ -160,6 +160,9 @@ platform_do_upgrade() {
 	z-router,zr-2662|\
 	zyxel,nwa50ax|\
 	zyxel,nwa55axe)
+		# this make it compatible with breed
+		dd if=/dev/mtd0 bs=64 count=1 2>/dev/null | grep -qi breed && CI_KERNPART_EXT="kernel_stock"
+		dd if=/dev/mtd0 2>/dev/null | grep -qi pb-boot && CI_KERNPART_EXT="kernel_stock"
 		nand_do_upgrade "$1"
 		;;
 	buffalo,wsr-2533dhpl2|\
